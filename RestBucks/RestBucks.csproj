@@ -35,13 +35,13 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Web.Services" />
-    <Reference Include="ServiceStack.Interfaces, Version=1.0.4114.3279, Culture=neutral, PublicKeyToken=null">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\ServiceStack.Interfaces.dll</HintPath>
-    </Reference>
     <Reference Include="ServiceStack, Version=2.0.9.3280, Culture=neutral, PublicKeyToken=null">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=1.0.4114.3279, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -59,9 +59,6 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Resources\hello.cs" />
-    <Compile Include="Responses\helloResponse.cs" />
-    <Compile Include="ServiceInterface\helloService.cs" />
     <Compile Include="Resources\Order.cs" />
     <Compile Include="Responses\PlaceOrderResponse.cs" />
     <Compile Include="ServiceInterface\OrderService.cs" />

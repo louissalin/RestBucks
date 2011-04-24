@@ -4,6 +4,7 @@ namespace RestBucks.Resources {
 
 	public class Order {
 
+		public int Id { get; set; }
 		public string Location { get; set; }
 		public List<OrderItem> Items { get; set; }
 		public decimal Cost { get; set; }

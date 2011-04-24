@@ -15,20 +15,22 @@ namespace RestBucks
 {
 	public class Global : System.Web.HttpApplication
 	{
-		public class HelloAppHost : AppHostBase
+		public class RestBucksHost : AppHostBase
 		{
-			public HelloAppHost() : base("RestBucks Services", typeof(OrderService).Assembly) {}
+			public RestBucksHost() : base("RestBucks Services", typeof(OrderGetService).Assembly) {}
 			
 			public override void Configure (Funq.Container container)
 			{
 				Routes
-					.Add<Order>("/order");
+					.Add<Order>("/order", "GET")
+					.Add<Order>("/order/{Id}", "GET")
+					.Add<Order>("/order", "PUT");
 			}
 		}
 		
 		protected void Application_Start(object sender, EventArgs args)
 		{
-			new HelloAppHost().Init();
+			new RestBucksHost().Init();
 		}
 	}
 }

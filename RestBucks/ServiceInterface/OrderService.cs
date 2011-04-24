@@ -1,3 +1,5 @@
+using System;
+
 using ServiceStack.ServiceHost;
 
 using RestBucks.Resources;
@@ -15,8 +17,7 @@ namespace RestBucks.Services
 
 		public object Execute(Order request)
 		{
-			var order = new Order { Id = 456 };
-			return new PlaceOrderResponse { Order = order };
+			throw new Exception("this should never get called");
 		}
 	}
 }

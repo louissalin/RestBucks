@@ -14,40 +14,6 @@ using RestBucks.Responses;
 
 namespace RestBucks.Tests {
 
-	public class IntegrationTestBase 
-		: AppHostHttpListenerBase {
-
-		protected const string BaseUrl = "http://localhost:8080/";
-
-		public IntegrationTestBase()
-			: base("RestBucks Examples", typeof(OrderService).Assembly)
-		{
-			LogManager.LogFactory = new DebugLogFactory();
-			Instance = null;
-
-			Init();
-			try
-			{
-				Start(BaseUrl);
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine("Error trying to run ConsoleHost: " + ex.Message);
-			}
-		}
-
-		public override void Configure (Funq.Container container)
-		{
-			container.Register<IResourceManager>(new ConfigurationResourceManager());
-
-			Routes
-				.Add<Order>("/order", "GET")
-				.Add<Order>("/order/{Id}", "GET")
-				.Add<Order>("/order", "PUT");
-		}
-	}
-
-
 	[TestFixture]
 	public class RestBucksServiceTests
 		: IntegrationTestBase {

@@ -18,13 +18,11 @@ namespace RestBucks.Tests {
 		: AppHostHttpListenerBase {
 
 		protected const string BaseUrl = "http://localhost:8080/";
-		private static ILog log;
 
 		public IntegrationTestBase()
 			: base("RestBucks Examples", typeof(OrderService).Assembly)
 		{
 			LogManager.LogFactory = new DebugLogFactory();
-			log = LogManager.GetLogger(GetType());
 			Instance = null;
 
 			Init();

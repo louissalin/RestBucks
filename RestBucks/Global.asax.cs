@@ -17,7 +17,7 @@ namespace RestBucks
 	{
 		public class RestBucksHost : AppHostBase
 		{
-			public RestBucksHost() : base("RestBucks Services", typeof(OrderGetService).Assembly) {}
+			public RestBucksHost() : base("RestBucks Services", typeof(OrderService).Assembly) {}
 			
 			public override void Configure (Funq.Container container)
 			{
@@ -34,4 +34,3 @@ namespace RestBucks
 		}
 	}
 }
-

@@ -43,6 +43,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
+    <Reference Include="ServiceStack.ServiceInterface, Version=1.0.4107.42502, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\ServiceStack.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -62,6 +67,7 @@
     <Compile Include="Resources\Order.cs" />
     <Compile Include="Responses\PlaceOrderResponse.cs" />
     <Compile Include="ServiceInterface\OrderService.cs" />
+    <Compile Include="test\test.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -8,9 +8,7 @@ using RestBucks.Responses;
 
 namespace RestBucks.Services
 {
-	public class OrderService : RestServiceBase<Order>, IService<Order>
-			//IRestGetService<Order>,
-			//IRestPutService<Order>
+	public class OrderService : RestServiceBase<Order>
 	{
 		public override object OnGet(Order request)
 		{

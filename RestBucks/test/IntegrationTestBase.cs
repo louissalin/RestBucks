@@ -41,7 +41,6 @@ namespace RestBucks.Tests {
 
 		public override void Configure (Container container)
 		{
-			container.Register<IResourceManager>(new ConfigurationResourceManager());
 			container.Register<IDbConnectionFactory>(c =>
 				new OrmLiteConnectionFactory(
 					":memory:",

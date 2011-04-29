@@ -26,10 +26,15 @@ namespace RestBucks.Services
 			}
 		}
 
-		public override object OnPut(Order request)
+		public override object OnPut(Order order)
 		{
-			var order = new Order { Id = 123 };
-			return new PlaceOrderResponse { Order = order };
+			var orderId = DbFactory.Exec(dbCmd => 
+					{
+						dbCmd.Save(order);
+						return dbCmd.GetLastInsertId();
+					});
+
+			return new PlaceOrderResponse { Order = DbFactory.Exec(dbCmd => dbCmd.GetById<Order>(orderId)) };
 		}
 	}
 }

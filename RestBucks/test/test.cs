@@ -32,7 +32,7 @@ namespace RestBucks.Tests {
 		public void put_requests_work()
 		{
 			var response = jsonClient.Put<PlaceOrderResponse>("/order", new Order());
-			Assert.AreEqual(response.Order.Id, 123);
+			Assert.AreEqual(response.Order.Id, 4);
 		}
 
 		[Test]

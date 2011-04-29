@@ -41,5 +41,12 @@ namespace RestBucks.Tests {
 			var response = jsonClient.Get<ListOrderResponse>("/order");
 			Assert.AreEqual(response.Orders.Count, 3);
 		}
+
+		[Test]
+		public void get_with_an_id_should_the_proper_order()
+		{
+			var response = jsonClient.Get<GetOrderResponse>("/order/2");
+			Assert.AreEqual(response.Order.Id, 2);
+		}
 	}
 }

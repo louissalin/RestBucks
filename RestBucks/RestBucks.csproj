@@ -84,6 +84,7 @@
     <Compile Include="test\IntegrationTestBase.cs" />
     <Compile Include="Resources\Link.cs" />
     <Compile Include="Responses\ListOrderResponse.cs" />
+    <Compile Include="Responses\GetOrderResponse.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

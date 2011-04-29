@@ -13,12 +13,12 @@ namespace RestBucks.Services
 	public class OrderService : RestServiceBase<Order>
 	{
 		public IDbConnectionFactory DbFactory { get; set; }
+
 		public override object OnGet(Order request)
 		{
-			if (request.Id > 1)
+			if (request.Id > 0)
 			{
-				var order = new Order { Id = 666 };
-				return new PlaceOrderResponse { Order = order };
+				return new GetOrderResponse { Order = DbFactory.Exec(dbCmd => dbCmd.GetById<Order>(request.Id)) };
 			}
 			else
 			{

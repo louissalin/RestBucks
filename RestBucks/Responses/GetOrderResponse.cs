@@ -3,8 +3,8 @@ using RestBucks.Resources;
 
 namespace RestBucks.Responses {
 
-	public class ListOrderResponse {
+	public class GetOrderResponse {
 		
-		public List<Order> Orders { get; set; }
+		public Order Order { get; set; }
 	}
 }

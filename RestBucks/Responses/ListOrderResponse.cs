@@ -1,8 +1,9 @@
+using System.Collections.Generic;
 using RestBucks.Resources;
 
 namespace RestBucks.Responses {
 	public class ListOrderResponse {
 		
-		public List<Orders> Orders { get; set; }
+		public List<Order> Orders { get; set; }
 	}
 }

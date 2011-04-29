@@ -1,5 +1,7 @@
 using System;
 
+using ServiceStack.OrmLite;
+using ServiceStack.OrmLite.Sqlite;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
@@ -10,10 +12,18 @@ namespace RestBucks.Services
 {
 	public class OrderService : RestServiceBase<Order>
 	{
+		public IDbConnectionFactory DbFactory { get; set; }
 		public override object OnGet(Order request)
 		{
-			var order = new Order { Id = 666 };
-			return new PlaceOrderResponse { Order = order };
+			if (request.Id > 1)
+			{
+				var order = new Order { Id = 666 };
+				return new PlaceOrderResponse { Order = order };
+			}
+			else
+			{
+				return new ListOrderResponse { Orders = DbFactory.Exec(dbCmd => dbCmd.Select<Order>()) };
+			}
 		}
 
 		public override object OnPut(Order request)

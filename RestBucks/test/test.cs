@@ -4,6 +4,8 @@ using NUnit.Framework;
 using ServiceStack.Common.Web;
 using ServiceStack.Configuration;
 using ServiceStack.Logging;
+using ServiceStack.OrmLite;
+using ServiceStack.OrmLite.Sqlite;
 using ServiceStack.Logging.Support.Logging;
 using ServiceStack.ServiceClient.Web;
 using ServiceStack.WebHost.Endpoints;
@@ -34,10 +36,10 @@ namespace RestBucks.Tests {
 		}
 
 		[Test]
-		public void get_requests_work()
+		public void get_without_an_id_should_display_all_orders()
 		{
-			var response = jsonClient.Get<PlaceOrderResponse>("/order");
-			Assert.AreEqual(response.Order.Id, 666);
+			var response = jsonClient.Get<ListOrderResponse>("/order");
+			Assert.AreEqual(response.Orders.Count, 3);
 		}
 	}
 }

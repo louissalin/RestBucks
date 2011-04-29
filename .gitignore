@@ -1,5 +1,6 @@
 *.userprefs
 *.pidb
+TestResult.xml
 bin/
 obj/
 

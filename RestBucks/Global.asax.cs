@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Web;
 using System.Web.SessionState;
 
+using ServiceStack.OrmLite;
+using ServiceStack.OrmLite.Sqlite;
 using ServiceStack.ServiceHost;
 using ServiceStack.WebHost.Endpoints;
 
@@ -17,6 +19,10 @@ namespace RestBucks
 		
 		public override void Configure (Funq.Container container)
 		{
+			container.Register<IDbConnectionFactory>(c =>
+				new OrmLiteConnectionFactory(
+					"db.sqlite", SqliteOrmLiteDialectProvider.Instance));
+
 			AppRoutes.SetRoutes(Routes);
 		}
 	}
